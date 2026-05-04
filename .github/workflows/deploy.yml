@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd ~/YOUR_PROJECT_NAME
+            cd ~/devops-ci-cd-pipeline
             git pull origin main
             docker build -t app .
             docker stop app || true
