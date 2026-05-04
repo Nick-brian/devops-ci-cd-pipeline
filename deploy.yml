@@ -4,6 +4,7 @@ script: |
 
   docker stop $(docker ps -q) || true
   docker rm $(docker ps -aq) || true
+  docker rmi app || true
 
   docker build --no-cache -t app .
   docker run -d -p 5000:5000 --name app app
